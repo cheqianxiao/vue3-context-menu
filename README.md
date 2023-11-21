@@ -1,6 +1,5 @@
+## vue3-context-menu
 
-vue3-context-menu
----
 A context menu component for Vue3
 
 ![Screenshot](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/first.png)
@@ -11,10 +10,10 @@ English | [简体中文](https://github.com/imengyu/vue3-context-menu/blob/main/
 
 ## Features
 
-* Simple and easy to use, small size
-* Provide component mode and function mode
-* Provide multiple theme styles for your use
-* Customizable
+- Simple and easy to use, small size
+- Provide component mode and function mode
+- Provide multiple theme styles for your use
+- Customizable
 
 ## Documentation
 
@@ -22,7 +21,7 @@ English | [简体中文](https://github.com/imengyu/vue3-context-menu/blob/main/
 
 [Click here View online Demo](https://imengyu.top/pages/vue3-context-menu-demo/)
 
-### Useage
+### Usage
 
 ```
 npm install -save @imengyu/vue3-context-menu
@@ -31,10 +30,10 @@ npm install -save @imengyu/vue3-context-menu
 Then import in the main.ts file:
 
 ```js
-import '@imengyu/vue3-context-menu/lib/vue3-context-menu.css'
-import ContextMenu from '@imengyu/vue3-context-menu'
+import "@imengyu/vue3-context-menu/lib/vue3-context-menu.css";
+import ContextMenu from "@imengyu/vue3-context-menu";
 
-createApp(App).use(ContextMenu)     
+createApp(App).use(ContextMenu);
 ```
 
 Then you can use the ContextMenu in the .vue file:
@@ -50,14 +49,14 @@ onContextMenu(e : MouseEvent) {
     x: e.x,
     y: e.y,
     items: [
-      { 
-        label: "A menu item", 
+      {
+        label: "A menu item",
         onClick: () => {
           alert("You click a menu item");
         }
       },
-      { 
-        label: "A submenu", 
+      {
+        label: "A submenu",
         children: [
           { label: "Item1" },
           { label: "Item2" },
@@ -65,24 +64,26 @@ onContextMenu(e : MouseEvent) {
         ]
       },
     ]
-  }); 
+  });
 }
 ```
 
 Or component:
 
 ```html
-<context-menu
-  v-model:show="show"
-  :options="optionsComponent"
->
+<context-menu v-model:show="show" :options="optionsComponent">
   <context-menu-item label="Simple item" @click="onMenuClick(1)" />
   <context-menu-sperator /><!--use this to add sperator-->
   <context-menu-group label="Menu with child">
     <context-menu-item label="Item1" @click="onMenuClick(2)" />
     <context-menu-item label="Item2" @click="onMenuClick(3)" />
     <context-menu-group label="Child with v-for 50">
-      <context-menu-item v-for="index of 50" :key="index" :label="'Item3-'+index" @click="onLoopMenuClick(index)" />
+      <context-menu-item
+        v-for="index of 50"
+        :key="index"
+        :label="'Item3-'+index"
+        @click="onLoopMenuClick(index)"
+      />
     </context-menu-group>
   </context-menu-group>
 </context-menu>
@@ -121,16 +122,16 @@ npm serve
 
 ## Built-in themes
 
-|theme|explain|example image|
-|--|--|--|
-|`default`|Default theme|![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-default.jpg)|
-|`default dark`|Default theme with dark|![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-default-dark.jpg)|
-|`flat`|Simple flat theme|![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-flat.jpg)|
-|`flat dark`|Simple flat theme with dark|![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-flat-dark.jpg)|
-|`win10`|Win10 like theme|![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-win10.jpg)|
-|`win10 dark`|Win10 like theme with dark|![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-win10-dark.jpg)|
-|`mac`|Mac like theme|![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-mac.jpg)|
-|`mac dark`|Mac like theme with dark|![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-mac-dark.jpg)|
+| theme          | explain                     | example image                                                                                                                     |
+| -------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `default`      | Default theme               | ![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-default.jpg)      |
+| `default dark` | Default theme with dark     | ![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-default-dark.jpg) |
+| `flat`         | Simple flat theme           | ![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-flat.jpg)         |
+| `flat dark`    | Simple flat theme with dark | ![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-flat-dark.jpg)    |
+| `win10`        | Win10 like theme            | ![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-win10.jpg)        |
+| `win10 dark`   | Win10 like theme with dark  | ![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-win10-dark.jpg)   |
+| `mac`          | Mac like theme              | ![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-mac.jpg)          |
+| `mac dark`     | Mac like theme with dark    | ![example-default-dark.jpg](https://raw.githubusercontent.com/imengyu/vue3-context-menu/main/screenshot/example-mac-dark.jpg)     |
 
 ## License
 
